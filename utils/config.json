@@ -1,0 +1,51 @@
+{
+  "bancos": [
+    {
+      "nombre": "Galicia",
+      "url": "https://www.galicia.ar/personas/promociones",
+      "selector_item": ".promobanner-container, .card-item, .m-card-promo" 
+    },
+    {
+      "nombre": "Santander",
+      "url": "https://www.santander.com.ar/personas/beneficios",
+      "tipo_extraccion": "spa_modal",
+      "selector_item": "li div[role='button']",
+      "config_spa": {
+        "accion_apertura": "click",
+        "accion_cierre": "ESCAPE",
+        "espera_carga": 3000
+      }
+    },
+    {
+      "nombre": "Banco Nacion",
+      "url": "https://www.bna.com.ar/Personas/Promociones/Transporte",
+      "selector_item": ".promocion-item, .card, div.row"
+    },
+    {
+      "nombre": "Visa",
+      "url": "https://www.visa.com.ar/es_ar/promociones/", 
+      "selector_item": "vs-perk-card, .vs-card-content",
+      "selector_espera_carga": ".vs-offer-details" 
+    },
+    {
+      "nombre": "Prex",
+      "url": "https://www.prexcard.com.ar/promociones",
+      "selector_item": "a[href^='/promociones/'], a[class*='BenefitCard']"
+    },
+    {
+      "nombre": "Personal Pay",
+      "url": "https://www.personalpay.com.ar/beneficios",
+      "selector_item": "div[class*='Card_body'], div[class*='Card_containerPartner']"
+    },
+    {
+      "nombre": "Uala",
+      "url": "https://www.uala.com.ar/promociones?promotionType=Descuento",
+      "selector_item": "li a[href^='/promociones/']"
+    },
+    {
+      "nombre": "Fiwind",
+      "url": "https://www.fiwind.io/promociones",
+      "selector_item": ".promociones-item-container, .w-dyn-item"
+    }
+  ]
+}

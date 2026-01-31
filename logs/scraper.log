@@ -1,0 +1,76 @@
+2026-01-30 15:58:15,162 - ERROR - Error crítico en módulo de Galicia: Stealth.async_hooked_method: Executable doesn't exist at C:\Users\Usuario\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557
+\u2551 Looks like Playwright was just installed or updated.       \u2551
+\u2551 Please run the following command to download new browsers: \u2551
+\u2551                                                            \u2551
+\u2551     playwright install                                     \u2551
+\u2551                                                            \u2551
+\u2551 <3 Playwright Team                                         \u2551
+\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d
+2026-01-30 15:58:15,168 - ERROR - Error crítico en módulo de Santander: Stealth.async_hooked_method: Executable doesn't exist at C:\Users\Usuario\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557
+\u2551 Looks like Playwright was just installed or updated.       \u2551
+\u2551 Please run the following command to download new browsers: \u2551
+\u2551                                                            \u2551
+\u2551     playwright install                                     \u2551
+\u2551                                                            \u2551
+\u2551 <3 Playwright Team                                         \u2551
+\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d
+2026-01-30 16:00:23,517 - ERROR - Error crítico en módulo de Galicia: Page.wait_for_selector: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("div.card-beneficio") to be visible
+
+2026-01-30 17:02:08,735 - Falla en Galicia: Page.wait_for_selector: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("div.card-beneficio") to be visible
+
+2026-01-30 17:06:44,266 - Falla en Galicia: Page.wait_for_selector: Target page, context or browser has been closed
+Call log:
+  - waiting for locator(".beneficio-card, .card-promociones") to be visible
+
+2026-01-30 17:06:47,273 - Falla en Santander: Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.santander.com.ar/personas/beneficios#/", waiting until "networkidle"
+
+2026-01-30 17:06:49,765 - Falla en Banco Nacion: Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.bna.com.ar/Personas/Promociones/Transporte", waiting until "networkidle"
+
+2026-01-30 17:08:54,474 - Falla en Galicia: Page.wait_for_selector: Timeout 20000ms exceeded.
+Call log:
+  - waiting for locator(".beneficio-card, .card-promociones") to be visible
+
+2026-01-30 17:09:39,576 - Falla en Santander: Page.goto: Timeout 45000ms exceeded.
+Call log:
+  - navigating to "https://www.santander.com.ar/personas/beneficios#/", waiting until "networkidle"
+
+2026-01-30 17:10:24,680 - Falla en Banco Nacion: Page.goto: Timeout 45000ms exceeded.
+Call log:
+  - navigating to "https://www.bna.com.ar/Personas/Promociones/Transporte", waiting until "networkidle"
+
+2026-01-30 17:15:43,345 - Falla en Galicia: Page.wait_for_selector: Timeout 20000ms exceeded.
+Call log:
+  - waiting for locator(".beneficio-card, .card-promociones") to be visible
+
+2026-01-30 17:16:06,852 - Falla en Banco Nacion: Page.wait_for_selector: Timeout 20000ms exceeded.
+Call log:
+  - waiting for locator(".promocion-item, .card") to be visible
+
+2026-01-30 17:27:34,934 - Falla crítica en Galicia: Page.wait_for_selector: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("div[class*='card'], .beneficio-card") to be visible
+
+2026-01-30 17:27:57,028 - Falla crítica en Santander: Page.wait_for_selector: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("div.card:has-text('Transporte'), div.card:has-text('SUBE'), section:has-text('Transporte')") to be visible
+
+2026-01-30 17:37:15,453 - Falla crítica en Santander: 'ElementHandle' object has no attribute 'xpath'
+2026-01-30 18:22:02,206 - Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-01-31 11:53:21,907 - Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-01-31 12:51:24,421 - Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
