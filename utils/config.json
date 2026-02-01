@@ -3,11 +3,15 @@
     {
       "nombre": "Galicia",
       "url": "https://www.galicia.ar/personas/promociones",
+      "logo_url": "https://cdn.brandfetch.io/idy1dCadBF/w/180/h/180/theme/dark/icon.png?c=1bxid64Mup7aczewSAYMX&t=1667880072878",
+      "color_hex": "#ff6600",
       "selector_item": ".promobanner-container, .card-item, .m-card-promo" 
     },
     {
       "nombre": "Santander",
       "url": "https://www.santander.com.ar/personas/beneficios",
+      "logo_url": "https://cdn.brandfetch.io/idWPmUE5JO/w/399/h/399/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1764444135135",
+      "color_hex": "#ec0000",
       "tipo_extraccion": "spa_modal",
       "selector_item": "li div[role='button']",
       "config_spa": {
@@ -19,32 +23,44 @@
     {
       "nombre": "Banco Nacion",
       "url": "https://www.bna.com.ar/Personas/Promociones/Transporte",
+      "logo_url": "https://play-lh.googleusercontent.com/EksZavQfabEH5CixFe-MqjT_9fuaBUU7CmR127KkGh9jlEtdIDHhc6L9u2xAYPlnVt8",
+      "color_hex": "#007858",
       "selector_item": ".promocion-item, .card, div.row"
     },
     {
       "nombre": "Visa",
       "url": "https://www.visa.com.ar/es_ar/promociones/", 
+      "logo_url": "https://cdn.brandfetch.io/idhem73aId/w/400/h/400/theme/dark/icon.png?c=1bxid64Mup7aczewSAYMX&t=1679062241241",
+      "color_hex": "#1a1f71",
       "selector_item": "vs-perk-card, .vs-card-content",
       "selector_espera_carga": ".vs-offer-details" 
     },
     {
       "nombre": "Prex",
       "url": "https://www.prexcard.com.ar/promociones",
+      "logo_url": "https://cdn.brandfetch.io/idhAdpuTQ-/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1767092801720",
+      "color_hex": "#152d43",
       "selector_item": "a[href^='/promociones/'], a[class*='BenefitCard']"
     },
     {
       "nombre": "Personal Pay",
       "url": "https://www.personalpay.com.ar/beneficios",
+      "logo_url": "https://cdn.brandfetch.io/idWATA8Keh/w/263/h/263/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1768376776406",
+      "color_hex": "#00dbf2",
       "selector_item": "div[class*='Card_body'], div[class*='Card_containerPartner']"
     },
     {
       "nombre": "Uala",
       "url": "https://www.uala.com.ar/promociones?promotionType=Descuento",
+      "logo_url": "https://cdn.brandfetch.io/idkFJo8i9w/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1717140939216",
+      "color_hex": "#fb2a52",
       "selector_item": "li a[href^='/promociones/']"
     },
     {
       "nombre": "Fiwind",
       "url": "https://www.fiwind.io/promociones",
+      "logo_url": "https://cdn.brandfetch.io/id1Ze0U1ei/w/395/h/395/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1769540508750",
+      "color_hex": "#000000",
       "selector_item": ".promociones-item-container, .w-dyn-item"
     }
   ]
