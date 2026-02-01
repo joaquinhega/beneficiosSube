@@ -1,77 +1,256 @@
-💳 BeneficiosSUBE - Beneficios de Transporte
-BeneficiosSUBE es una plataforma integral y autónoma diseñada para centralizar, procesar y visualizar los beneficios de transporte público dispersos en las webs de distintas fintechs o bancos tradicionales. El sistema utiliza técnicas de Web Scraping avanzado para recolectar datos, los persiste en una base de datos y los expone a través de una interfaz web moderna y responsiva.
- 
-- Arquitectura del Sistema
-El proyecto sigue un modelo de flujo de datos tipo ETL (Extract, Transform, Load) automatizado:
+# 💳 BeneficiosSUBE
 
-Extracción (Scraper): Utiliza Playwright para navegar de forma programática y extraer beneficios incluso en sitios con carga dinámica (SPA).
-Transformación: Limpia y normaliza los datos (elimina duplicados, normaliza días de la semana y detecta métodos de pago).
-Carga (Loader): Mapea los datos procesados a un esquema SQL relacional.
-Visualización: Un servidor FastAPI entrega la información a una Single Page Application (SPA) construida en JavaScript Vanilla.
+### Centralizador inteligente de beneficios para SUBE
 
-- Modelo de Datos (DER)
-La persistencia se realiza en SQLite mediante un diseño normalizado que garantiza la integridad y escalabilidad de los datos:
+![Python](https://img.shields.io/badge/Python-3.10+-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-API-success)
+![SQLite](https://img.shields.io/badge/Database-SQLite-lightgrey)
+![Playwright](https://img.shields.io/badge/Scraping-Playwright-orange)
+![CI](https://img.shields.io/badge/GitHub_Actions-Automated-brightgreen)
+![Status](https://img.shields.io/badge/Status-Active-success)
 
-Entidad_Emisora: Almacena bancos/billeteras con su identidad visual (Logo y Color Hex).
-Alcance_Geografico: Define las zonas de aplicación y tipos de transporte (Colectivo/Subte).
-Vigencia_Temporal: Gestiona los días y periodos de validez de cada promoción.
-Beneficio: Tabla central que vincula las entidades con sus descuentos y condiciones específicas.
+---
 
-- Stack Tecnológico
-Backend: Python 3.10+, FastAPI, Uvicorn.
-Scraping: Playwright, Playwright-Stealth.
-Base de Datos: SQLite3 (Relacional).
-Frontend: HTML5, CSS3 (Grid/Flexbox), JavaScript Vanilla.
-Automatización: GitHub Actions (CI/CD) con ejecución programada.
+## ¿Qué es BeneficiosSUBE?
 
-- Instalación y Configuración
-Sigue estos pasos para ejecutarla en entorno local:
+**BeneficiosSUBE** es una plataforma que **centraliza, normaliza y visualiza** los beneficios de transporte público (SUBE) ofrecidos por **bancos y billeteras virtuales**, los cuales hoy se encuentran **fragmentados, mal estructurados o poco accesibles** en múltiples sitios web.
 
-1. Requisitos Previos
--- Python instalado (versión 3.10 o superior).
+El proyecto automatiza la recolección de estos datos usando **Web Scraping avanzado**, los transforma en información limpia y estructurada, y los expone a través de una **interfaz web simple y entendible para cualquier usuario**.
 
--- Git para clonar el repositorio.
+> Pensado desde el punto de vista de la **persona común**, no del banco.
 
-2. Clonar y Preparar Entorno
-# Clonar el repositorio
+---
+
+## Motivación del Proyecto
+
+Hoy, una persona que quiere saber:
+
+* Qué banco le devuelve más viajando en colectivo
+* Qué días conviene usar determinada billetera
+* Si un beneficio aplica en su provincia
+
+Tiene que:
+
+* Recorrer múltiples webs,
+* Leer letras chicas,
+* Interpretar condiciones poco claras.
+
+**BeneficiosSUBE resuelve ese problema**, convirtiendo información dispersa y “sucia” en **datos claros, comparables y accesibles**.
+
+---
+
+## Arquitectura General (ETL)
+
+El sistema sigue un enfoque **ETL automatizado**, orientado a datos reales y no ideales.
+
+```text
+┌────────────┐
+│   Webs     │  Bancos / Fintechs
+└─────┬──────┘
+      │
+      ▼
+┌────────────┐
+│ Scrapers   │  Playwright (SPA, JS dinámico)
+└─────┬──────┘
+      │
+      ▼
+┌────────────┐
+│ Transform  │  Limpieza, normalización, deduplicación
+└─────┬──────┘
+      │
+      ▼
+┌────────────┐
+│ SQLite DB  │  Modelo relacional normalizado
+└─────┬──────┘
+      │
+      ▼
+┌────────────┐
+│ FastAPI    │  API REST
+└─────┬──────┘
+      │
+      ▼
+┌────────────┐
+│ Web UI     │  SPA JS Vanilla
+└────────────┘
+```
+
+---
+
+## Modelo de Datos (DER)
+
+Diseño relacional normalizado para garantizar integridad y escalabilidad.
+
+**Entidades principales:**
+
+* **Entidad_Emisora**
+
+  * Bancos y billeteras
+  * Logo
+  * Color institucional
+
+* **Alcance_Geografico**
+
+  * Provincia / Ciudad
+  * Tipo de transporte (Colectivo / Subte)
+
+* **Vigencia_Temporal**
+
+  * Días de la semana
+  * Períodos promocionales
+
+* **Beneficio**
+
+  * Descuento
+  * Tope
+  * Condiciones
+  * Relación con las entidades anteriores
+
+---
+
+## Stack Tecnológico
+
+### Backend
+
+* Python 3.10+
+* FastAPI
+* Uvicorn
+
+### Scraping
+
+* Playwright
+* Playwright-Stealth
+* Manejo de SPAs y carga dinámica
+
+### Base de Datos
+
+* SQLite (modelo relacional)
+
+### Frontend
+
+* HTML5
+* CSS3 (Grid / Flexbox)
+* JavaScript Vanilla
+
+### DevOps / Automatización
+
+* GitHub Actions
+* Git Scraping programado
+
+---
+
+## Instalación y Uso
+
+### 1️⃣ Requisitos
+
+* Python 3.10+
+* Git
+
+---
+
+### 2️⃣ Clonar y configurar entorno
+
+```bash
 git clone https://github.com/tu-usuario/beneficiosSube.git
 cd beneficiosSube
+```
 
-# Crear y activar entorno virtual
+```bash
 python -m venv .venv
-En Windows: .venv\Scripts\activate
+```
 
-# Instalar dependencias
+Activar entorno:
+
+**Windows**
+
+```bash
+.venv\Scripts\activate
+```
+
+**Linux / macOS**
+
+```bash
+source .venv/bin/activate
+```
+
+Instalar dependencias:
+
+```bash
 pip install -r requirements.txt
 playwright install chromium
-3. Ejecutar el Sistema
-Puedes ejecutar el flujo completo o solo la interfaz web:
+```
 
-Scraper + Loader (Recolectar datos):
+---
 
+### 3️⃣ Ejecución
+
+**Ejecutar ETL completo (scraping + carga):**
+
+```bash
 python main.py
-Interfaz Web (Ver beneficios):
+```
 
+**Levantar interfaz web:**
+
+```bash
 uvicorn web.main:app --reload
-Luego abre http://127.0.0.1:8000 en tu navegador.
+```
 
-- Automatización (GitHub Actions)
-El proyecto cuenta con un flujo de Git Scraping configurado en .github/workflows/schedule.yml. Este bot se ejecuta automáticamente todos los días a las 08:00 AM para:
+Abrir en el navegador:
 
--- Encender un entorno Linux efímero.
- 
--- Ejecutar los scrapers.
+```
+http://127.0.0.1:8000
+```
 
--- Actualizar la base de datos beneficios.db.
+---
 
--- Realizar un commit automático con los nuevos datos al repositorio.
+## Automatización (GitHub Actions)
 
-- Estructura del Proyecto
+El proyecto incluye un workflow de **Git Scraping** en:
+
+```
+.github/workflows/schedule.yml
+```
+
+Se ejecuta **todos los días a las 08:00 AM** y:
+
+* Inicializa entorno Linux
+* Ejecuta scrapers
+* Actualiza `beneficios.db`
+* Commits automáticos con nuevos datos
+
+El repositorio **se actualiza solo**, sin intervención humana.
+
+---
+
+## Estructura del Proyecto
+
+```text
 beneficiosSube/
-├── data/               # Base de datos SQLite y archivos JSON procesados
-├── loaders/            # Lógica de carga a la base de datos (SQL)
-├── logs/               # Historial de ejecución del scraper
-├── scrapers/           # Scripts de extracción (Playwright)
-├── utils/              # Configuración centralizada de bancos (logos, colores, URLs)
-├── web/                # Aplicación Web (FastAPI, HTML, CSS, JS)
-└── main.py             # Orquestador principal del proceso ETL
+├── data/               # SQLite + JSON procesados
+├── loaders/            # Inserción y normalización SQL
+├── logs/               # Logs de scraping
+├── scrapers/           # Extracción Playwright
+├── utils/              # Configuración de entidades (logos, colores, URLs)
+├── web/                # FastAPI + UI
+└── main.py             # Orquestador ETL
+```
+
+---
+
+## Enfoque del Proyecto
+
+* Datos reales y desordenados
+* Problema cotidiano
+* Automatización completa
+* Escalable a nuevas entidades
+* Pensado para usuarios no técnicos
+
+---
+
+## Proximas Extensiones...
+
+* Filtros por provincia
+* Comparador de bancos
+* Historial de beneficios
+* API pública
+* Dashboard analítico
