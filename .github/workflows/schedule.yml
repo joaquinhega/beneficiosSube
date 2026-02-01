@@ -31,6 +31,8 @@ jobs:
       run: |
         git config --global user.name 'BeneficiosBot'
         git config --global user.email 'bot@noreply.github.com'
-        git add data/beneficios.db logs/scraper.log
-        # Solo hacemos commit si hay cambios reales
-        git diff --quiet && git diff --staged --quiet || (git commit -m "Actualización automática de beneficios: $(date +'%Y-%m-%d')" && git push)
+        
+        git add data/*.json data/*.db logs/*.log
+        
+        git commit -m "Actualización automática: $(date +'%Y-%m-%d %H:%M')" || exit 0        
+        git push
