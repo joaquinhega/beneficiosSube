@@ -21,7 +21,7 @@
         "requiere_nfc": true,
         "aplica_subte": false,
         "url_detalle_promo": "https://www.santander.com.ar/personas/beneficios",
-        "terminos_condiciones": "\nEXCLUSIVO VISA\n100% de ahorro\n\n100%\n\nDE AHORRO\n\nTope de reintegro: $10.000 mensual\n\nPagando sin contacto, con tu celu con tecnología NFC a través de ApplePay, Google Pay o MODO Contactless.\n\nPagando con:\n\nLos días:\n\nL\nM\nM\nJ\nV\nS\nD\n\nVigencia desde el 01/01/2026 hasta el 28/02/2026.\n\nTérminos y condiciones\n\nVIGENCIA DIAS: Miércoles, Domingo, Viernes, Lunes, Sábado, Jueves, Martes.\n\nTERMINOS Y CONDICIONES:\nPROMOCIÓN VÁLIDA EN LA CIUDAD AUTONÓMA DE BUENOS AIRES, ARGENTINA. DEL 01 DE ENERO DE 2026 AL 28 DE FEBRERO DE 2026 INCLUSIVE. 100% DE REINTEGRO CON UN TOPE DE AR$10.000 MENSUAL POR TARJETA, PAGANDO CON TARJETAS VISA CRÉDITO O DÉBITO A TRAVÉS DE APPLE PAY (DISPONIBLE SÓLO EN IOS), GOOGLE PAY, MODO CONTACTLESS. EXCLUSIVO PARA PAGOS NFC. NO APLICA PARA PAGOS QR. LA PROMOCIÓN ES ORGANIZADA POR...",
+        "terminos_condiciones": "\nEXCLUSIVO VISA\n100% de ahorro\n\n100%\n\nDE AHORRO\n\nTope de reintegro: $10.000 mensual\n\nPagando sin contacto, con tu celu con tecnología NFC a través de ApplePay, Google Pay o MODO Contactless.\n\nPagando con:\n\nLos días:\n\nL\nM\nM\nJ\nV\nS\nD\n\nVigencia desde el 01/01/2026 hasta el 28/02/2026.\n\nTérminos y condiciones\n\nVIGENCIA DIAS: Miércoles, Lunes, Sábado, Viernes, Domingo, Martes, Jueves.\n\nTERMINOS Y CONDICIONES:\nPROMOCIÓN VÁLIDA EN LA CIUDAD AUTONÓMA DE BUENOS AIRES, ARGENTINA. DEL 01 DE ENERO DE 2026 AL 28 DE FEBRERO DE 2026 INCLUSIVE. 100% DE REINTEGRO CON UN TOPE DE AR$10.000 MENSUAL POR TARJETA, PAGANDO CON TARJETAS VISA CRÉDITO O DÉBITO A TRAVÉS DE APPLE PAY (DISPONIBLE SÓLO EN IOS), GOOGLE PAY, MODO CONTACTLESS. EXCLUSIVO PARA PAGOS NFC. NO APLICA PARA PAGOS QR. LA PROMOCIÓN ES ORGANIZADA POR...",
         "fecha_inicio": "2026-01-01",
         "fecha_fin": "2026-02-28",
         "dias_semana": "Lunes,Martes,Miércoles,Jueves,Viernes,Sábado,Domingo",
@@ -36,12 +36,27 @@
         "requiere_nfc": true,
         "aplica_subte": true,
         "url_detalle_promo": "https://www.santander.com.ar/personas/beneficios",
-        "terminos_condiciones": "\nEXCLUSIVO VISA\n100% de ahorro\n\n100%\n\nDE AHORRO\n\nTope de reintegro: $10.000 mensual\n\nPagando sin contacto, con tu celu con tecnología NFC a través de ApplePay, Google Pay o MODO Contactless.\n\nPagando con:\n\nLos días:\n\nL\nM\nM\nJ\nV\nS\nD\n\nVigencia desde el 01/01/2026 hasta el 28/02/2026.\n\nTérminos y condiciones\n\nVIGENCIA DIAS: Miércoles, Domingo, Viernes, Lunes, Sábado, Jueves, Martes.\n\nTERMINOS Y CONDICIONES:\nPROMOCIÓN VÁLIDA EN LA CIUDAD AUTONÓMA DE BUENOS AIRES, ARGENTINA. DEL 01 DE ENERO DE 2026 AL 28 DE FEBRERO DE 2026 INCLUSIVE. 100% DE REINTEGRO CON UN TOPE DE AR$10.000 MENSUAL POR TARJETA, PAGANDO CON TARJETAS VISA CRÉDITO O DÉBITO A TRAVÉS DE APPLE PAY (DISPONIBLE SÓLO EN IOS), GOOGLE PAY, MODO CONTACTLESS. EXCLUSIVO PARA PAGOS NFC. NO APLICA PARA PAGOS QR. LA PROMOCIÓN ES ORGANIZADA POR...",
+        "terminos_condiciones": "\nEXCLUSIVO VISA\n100% de ahorro\n\n100%\n\nDE AHORRO\n\nTope de reintegro: $10.000 mensual\n\nPagando sin contacto, con tu celu con tecnología NFC a través de ApplePay, Google Pay o MODO Contactless.\n\nPagando con:\n\nLos días:\n\nL\nM\nM\nJ\nV\nS\nD\n\nVigencia desde el 01/01/2026 hasta el 28/02/2026.\n\nTérminos y condiciones\n\nVIGENCIA DIAS: Miércoles, Lunes, Sábado, Viernes, Domingo, Martes, Jueves.\n\nTERMINOS Y CONDICIONES:\nPROMOCIÓN VÁLIDA EN LA CIUDAD AUTONÓMA DE BUENOS AIRES, ARGENTINA. DEL 01 DE ENERO DE 2026 AL 28 DE FEBRERO DE 2026 INCLUSIVE. 100% DE REINTEGRO CON UN TOPE DE AR$10.000 MENSUAL POR TARJETA, PAGANDO CON TARJETAS VISA CRÉDITO O DÉBITO A TRAVÉS DE APPLE PAY (DISPONIBLE SÓLO EN IOS), GOOGLE PAY, MODO CONTACTLESS. EXCLUSIVO PARA PAGOS NFC. NO APLICA PARA PAGOS QR. LA PROMOCIÓN ES ORGANIZADA POR...",
         "fecha_inicio": "2026-01-01",
         "fecha_fin": "2026-02-28",
         "dias_semana": "Lunes,Martes,Miércoles,Jueves,Viernes,Sábado,Domingo",
         "frecuencia": "Mensual",
         "provincia_region": "Mendoza",
         "banco": "Santander"
+    },
+    {
+        "porcentaje_descuento": 100.0,
+        "tope_reintegro": 10000.0,
+        "monto_minimo_consumo": 0.0,
+        "requiere_nfc": true,
+        "aplica_subte": true,
+        "url_detalle_promo": "https://www.visa.com.ar/es_ar/promociones/promocion-transporte-con-tarjeta-visa/171990",
+        "terminos_condiciones": "Saltar al contenido\n Iniciar sesión/Registrarse\nPersonasNegociosComunidadPromocionesVisa Home\nPromoción Transporte con tarjeta Visa | Promociones | Visa\nencabezado de la oferta\nPromoción Transporte con tarjeta Visa\n\nPagá tu pasaje en colectivo o subte desde el celular con Visa Crédito, Débito o Prepago y movete por la ciudad fácil y rápido. ¡Viajá gratis, descubrí cómo!\n\nCanjealo de forma presencial.\n\nSaber más \n\nVer todas las promociones y beneficios \n\nDetalles\n\nPagá tu pasaje en colectivo o subte con tu Visa Crédito, Débito o Prepago desde el celular y accedé a un beneficio exclusivo:\n\n100% de reintegro sobre el valor del pasaje\nTope mensual: AR$10.000 por tarjeta, tanto en Subte como en Colectivo\nAplica únicamente a tarjetas Visa Crédito, Débito o Prepago emitidas en Argentina\nEl reinte...",
+        "fecha_inicio": "2026-01-01",
+        "fecha_fin": "2026-02-28",
+        "dias_semana": "Lunes,Martes,Miércoles,Miércoles,Jueves,Viernes,Sábado,Sábado,Domingo",
+        "frecuencia": "Mensual",
+        "provincia_region": "Mendoza",
+        "banco": "Visa"
     }
 ]
