@@ -16,7 +16,7 @@
     },
     {
         "porcentaje_descuento": 100.0,
-        "tope_reintegro": 30000.0,
+        "tope_reintegro": 10000.0,
         "monto_minimo_consumo": 0.0,
         "requiere_nfc": true,
         "aplica_subte": true,
