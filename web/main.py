@@ -27,13 +27,20 @@ async def api_beneficios():
     cursor = conn.cursor()
     
     query = """
-    SELECT e.nombre_entidad as banco, e.logo_url, e.color_hex, b.porcentaje_descuento, 
-           b.tope_reintegro, vt.dias_semana, b.url_detalle_promo, b.terminos_condiciones, 
-           ag.aplica_subte, b.requiere_nfc
+    SELECT e.nombre_entidad as banco, e.logo_url, e.color_hex, e.url_promociones_principal,
+           b.porcentaje_descuento, b.tope_reintegro, vt.dias_semana, b.url_detalle_promo,
+           b.terminos_condiciones, ag.aplica_subte, b.requiere_nfc
     FROM Beneficio b
     JOIN Entidad_Emisora e ON b.id_entidad = e.id_entidad
     JOIN Vigencia_Temporal vt ON b.id_vigencia = vt.id_vigencia
     JOIN Alcance_Geografico ag ON b.id_alcance = ag.id_alcance
+    INNER JOIN (
+        SELECT id_entidad, url_detalle_promo, MAX(fecha_ultima_actualizacion) as max_fecha
+        FROM Beneficio
+        GROUP BY id_entidad, url_detalle_promo
+    ) latest ON b.id_entidad = latest.id_entidad
+            AND b.url_detalle_promo = latest.url_detalle_promo
+            AND b.fecha_ultima_actualizacion = latest.max_fecha
     """
     
     cursor.execute(query)
@@ -44,6 +51,15 @@ async def api_beneficios():
     for f in filas:
         d = dict(f)
         
+        # Flag if url_detalle_promo is just the bank's main promotions page
+        from urllib.parse import urlparse
+        url_principal = d.pop('url_promociones_principal', None)
+        promo_url = d.get('url_detalle_promo', '')
+        def _norm_url(u):
+            p = urlparse(u)
+            return (p.scheme, p.netloc.lower(), p.path.rstrip('/'))
+        d['is_generic_url'] = bool(url_principal and promo_url and _norm_url(promo_url) == _norm_url(url_principal))
+
         # Normalización de dias
         orden_dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"]
         dias_set = {x.strip().capitalize() for x in d['dias_semana'].split(',')}

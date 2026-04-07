@@ -31,7 +31,7 @@ function render(lista) {
                 <p><strong>Pago:</strong> ${b.metodos_pago}</p>
             </div>
             <div class="card-footer">
-                <a href="${b.url_detalle_promo}" target="_blank" class="btn-link" style="color:${b.color_hex}; border-color:${b.color_hex}">Ver Promo</a>
+                <a href="${b.url_detalle_promo}" target="_blank" class="btn-link" style="color:${b.color_hex}; border-color:${b.color_hex}">${b.is_generic_url ? 'Ver Beneficios' : 'Ver Promo'}</a>
             </div>
         </div>
     `).join('');

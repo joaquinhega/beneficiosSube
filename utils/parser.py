@@ -114,7 +114,8 @@ class BeneficioSubeParser:
                 parte_dias = texto_upper.split("VIGENCIA DIAS:")[1].split("\n")[0]
                 encontrados = []
                 for clave, valor in self.dias_map.items():
-                    if clave in parte_dias: encontrados.append(valor)
+                    if clave in parte_dias and valor not in encontrados:
+                        encontrados.append(valor)
                 if encontrados: return encontrados
             except: pass
 
@@ -123,8 +124,11 @@ class BeneficioSubeParser:
         
         encontrados = []
         for clave, valor in self.dias_map.items():
-            if clave in texto_upper and valor not in encontrados: encontrados.append(valor)
+            if clave in texto_upper and valor not in encontrados:
+                encontrados.append(valor)
         return encontrados if encontrados else list(self.dias_map.values())
+
+
 
     def _limpiar_terminos(self, texto_sucio):
         borrar = ["Menú", "Hacete Cliente", "Online Banking", "Cerrar sesión", "Ir al contenido", "Volver"]

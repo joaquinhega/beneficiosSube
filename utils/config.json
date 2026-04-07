@@ -62,6 +62,27 @@
       "logo_url": "https://cdn.brandfetch.io/id1Ze0U1ei/w/395/h/395/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1769540508750",
       "color_hex": "#000000",
       "selector_item": ".promociones-item-container, .w-dyn-item"
+    },
+    {
+      "nombre": "NaranjaX",
+      "url": "https://www.naranjax.com/beneficios",
+      "logo_url": "https://cdn.brandfetch.io/id_fiwMaYP/w/400/h/400/theme/dark/icon.png?c=1bxid64Mup7aczewSAYMX",
+      "color_hex": "#ff5e00",
+      "selector_item": "a[href*='beneficio'], div[class*='benefit'], div[class*='promo'], article[class*='card']"
+    },
+    {
+      "nombre": "Mercado Pago",
+      "url": "https://www.mercadopago.com.ar/beneficios",
+      "logo_url": "https://cdn.brandfetch.io/idmNM3b7P1/w/400/h/400/theme/dark/icon.png?c=1bxid64Mup7aczewSAYMX",
+      "color_hex": "#00b1ea",
+      "selector_item": "a[href*='beneficio'], div[class*='benefit-card'], div[class*='promo-card']"
+    },
+    {
+      "nombre": "Macro",
+      "url": "https://www.macro.com.ar/personas/beneficios",
+      "logo_url": "https://cdn.brandfetch.io/idxL3cSF1h/w/400/h/400/theme/dark/icon.png?c=1bxid64Mup7aczewSAYMX",
+      "color_hex": "#ffcc00",
+      "selector_item": "a[href*='promo'], a[href*='beneficio'], div[class*='card-promo'], .item-promo"
     }
   ]
 }

@@ -28,6 +28,9 @@ def setup_database():
         cursor.execute("ALTER TABLE Entidad_Emisora ADD COLUMN logo_url TEXT")
         cursor.execute("ALTER TABLE Entidad_Emisora ADD COLUMN color_hex TEXT")
     except: pass
+    try:
+        cursor.execute("ALTER TABLE Entidad_Emisora ADD COLUMN url_promociones_principal TEXT")
+    except: pass
     
     cursor.execute('CREATE TABLE IF NOT EXISTS Alcance_Geografico (id_alcance INTEGER PRIMARY KEY AUTOINCREMENT, provincia_region TEXT, aplica_subte BOOLEAN, UNIQUE(provincia_region, aplica_subte))')
     cursor.execute('CREATE TABLE IF NOT EXISTS Vigencia_Temporal (id_vigencia INTEGER PRIMARY KEY AUTOINCREMENT, fecha_inicio DATE, fecha_fin DATE, dias_semana TEXT, frecuencia TEXT, UNIQUE(fecha_inicio, fecha_fin, dias_semana, frecuencia))')
@@ -35,13 +38,13 @@ def setup_database():
     conn.commit()
     conn.close()
 
-def gestionar_entidad(cursor, nombre, logo, color):
+def gestionar_entidad(cursor, nombre, logo, color, url_principal=None):
     cursor.execute("SELECT id_entidad FROM Entidad_Emisora WHERE nombre_entidad = ?", (nombre,))
     res = cursor.fetchone()
     if res:
-        cursor.execute("UPDATE Entidad_Emisora SET logo_url = ?, color_hex = ? WHERE id_entidad = ?", (logo, color, res[0]))
+        cursor.execute("UPDATE Entidad_Emisora SET logo_url = ?, color_hex = ?, url_promociones_principal = ? WHERE id_entidad = ?", (logo, color, url_principal, res[0]))
         return res[0]
-    cursor.execute("INSERT INTO Entidad_Emisora (nombre_entidad, logo_url, color_hex) VALUES (?, ?, ?)", (nombre, logo, color))
+    cursor.execute("INSERT INTO Entidad_Emisora (nombre_entidad, logo_url, color_hex, url_promociones_principal) VALUES (?, ?, ?, ?)", (nombre, logo, color, url_principal))
     return cursor.lastrowid
 
 def obtener_id_generico(cursor, tabla, campos, valores):
@@ -63,12 +66,19 @@ def cargar_datos():
     conn = conectar_db(); cursor = conn.cursor(); count = 0
     for item in datos:
         b = branding.get(item['banco'], {})
-        id_ent = gestionar_entidad(cursor, item['banco'], b.get('logo_url'), b.get('color_hex'))
+        id_ent = gestionar_entidad(cursor, item['banco'], b.get('logo_url'), b.get('color_hex'), b.get('url'))
         id_alc = obtener_id_generico(cursor, "Alcance_Geografico", ["provincia_region", "aplica_subte"], [item.get('provincia_region', 'Mendoza'), item['aplica_subte']])
         id_vig = obtener_id_generico(cursor, "Vigencia_Temporal", ["fecha_inicio", "fecha_fin", "dias_semana", "frecuencia"], [item['fecha_inicio'], item['fecha_fin'], item['dias_semana'], item['frecuencia']])
         
-        cursor.execute("SELECT id_beneficio FROM Beneficio WHERE id_entidad=? AND id_vigencia=? AND url_detalle_promo=?", (id_ent, id_vig, item['url_detalle_promo']))
-        if not cursor.fetchone():
+        cursor.execute("SELECT id_beneficio FROM Beneficio WHERE id_entidad=? AND url_detalle_promo=?", (id_ent, item['url_detalle_promo']))
+        existing = cursor.fetchone()
+        if existing:
+            cursor.execute("""UPDATE Beneficio SET id_alcance=?, id_vigencia=?, porcentaje_descuento=?, tope_reintegro=?,
+                monto_minimo_consumo=?, requiere_nfc=?, terminos_condiciones=?, fecha_ultima_actualizacion=CURRENT_TIMESTAMP
+                WHERE id_beneficio=?""",
+                (id_alc, id_vig, item['porcentaje_descuento'], item['tope_reintegro'], item['monto_minimo_consumo'],
+                 item['requiere_nfc'], item['terminos_condiciones'], existing[0]))
+        else:
             cursor.execute("INSERT INTO Beneficio (id_entidad, id_alcance, id_vigencia, porcentaje_descuento, tope_reintegro, monto_minimo_consumo, requiere_nfc, url_detalle_promo, terminos_condiciones) VALUES (?,?,?,?,?,?,?,?,?)",
                 (id_ent, id_alc, id_vig, item['porcentaje_descuento'], item['tope_reintegro'], item['monto_minimo_consumo'], item['requiere_nfc'], item['url_detalle_promo'], item['terminos_condiciones']))
             count += 1
