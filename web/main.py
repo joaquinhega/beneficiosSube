@@ -17,7 +17,7 @@ templates = Jinja2Templates(directory=os.path.join(BASE_DIR, "templates"))
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
     """Renderiza la main page de la app."""
-    return templates.TemplateResponse("index.html", {"request": request})
+    return templates.TemplateResponse(request=request, name="index.html")
 
 @app.get("/api/beneficios")
 async def api_beneficios():
