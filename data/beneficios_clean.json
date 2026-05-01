@@ -1,17 +1,1 @@
-[
-    {
-        "porcentaje_descuento": 100.0,
-        "tope_reintegro": 10000.0,
-        "monto_minimo_consumo": 0.0,
-        "requiere_nfc": true,
-        "aplica_subte": true,
-        "url_detalle_promo": "https://www.galicia.ar/personas/promociones/promo-reintegro-subte",
-        "terminos_condiciones": "\nPersonasPromocionesPromoción reintegro en subte\nViajá en subte con hasta 100% de ahorro\n\nPagando sin contacto desde tu celu o reloj, con tu Tarjeta de Débito Visa Galicia.\n\nAprovechá esta promo y viajá gratis\n100% de ahorro\n\nCon tu Tarjeta de Débito Visa Galicia, mediante NFC, desde Apple Pay y Google Pay. \nTope de reintegro: $10.000 por mes, por tarjeta.\n\nCómo pagar\n\nAcercá tu celular y/o reloj a la terminal de pago habilitada en la estación de subte.\n\nPedí tus tarjetas hoy y ahorrá en transporte público\n\nExprimí a fondo nuestras promociones en subte, colectivo, y transportes por app.\n\nPedir tarjetas\nUn mundo de beneficios\n\nTenés muchísimas promociones en miles de comercios del país. Conocelas 🤩\n\nConocer todas las promos\n\nCARTERA DE CONSUMO: Promoción del 100% de ahorro en compras realiz...",
-        "fecha_inicio": "2026-03-01",
-        "fecha_fin": "2026-04-30",
-        "dias_semana": "Lunes,Martes,Miércoles,Miércoles,Jueves,Viernes,Sábado,Sábado,Domingo",
-        "frecuencia": "Mensual",
-        "provincia_region": "Mendoza",
-        "banco": "Galicia"
-    }
-]
+[]
